@@ -288,12 +288,12 @@ $params = @{
 			Type = "Role"
 		},
 		@{
-                    "id"   = "1b620472-6534-4fe6-9df2-4680e8aa28ec"
-                    "type" = "Role"
+                    	Id = "1b620472-6534-4fe6-9df2-4680e8aa28ec"
+                    	Type = "Role"
                 },
                 @{
-                    "id"   = "79c261e0-fe76-4144-aad5-bdc68fbe4037"
-                    "type" = "Role"
+                    	Id = "79c261e0-fe76-4144-aad5-bdc68fbe4037"
+		    	Type = "Role"
                 }
             )
         }
