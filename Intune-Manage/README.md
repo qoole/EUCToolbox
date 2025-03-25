@@ -58,18 +58,18 @@ Runbooks:
 - Microsoft.Graph.Identity.Signins
 2) Create a runbook for the backup/restore script, run on Azure, PowerShell v5.1
 3) Paste this script into the content:
-[intune-backup-restore-withgui.ps1](https://raw.githubusercontent.com/qoole/EUCToolbox/main/Manage-Intune/Runbook%20Script/intune-backup-restore-withgui.ps1)
+[intune-backup-restore-withgui.ps1](https://raw.githubusercontent.com/qoole/EUCToolbox/main/Intune-Manage/Runbook%20Script/intune-backup-restore-withgui.ps1)
 4) Publish it
 5) Click Webhooks and create a new webhook.  Don't populate any of the fields, they are passed from the application itself.
 6) Make a note of the URI, it will not display again after leaving the page.
 7) Create a second runbook following the same process for this drift monitoring using this script:
-[monitor-drift.ps1](https://raw.githubusercontent.com/qoole/EUCToolbox/main/Manage-Intune/Runbook%20Script/monitor-drift.ps1)
+[monitor-drift.ps1](https://raw.githubusercontent.com/qoole/EUCToolbox/main/Intune-Manage/Runbook%20Script/monitor-drift.ps1)
 
 
 Web Service
 1) Create an Azure App Service running PHP (latest version), or you can use any other web hosting facilities
 2) Copy the contents of this directory into the root:
-[Webpage Content](https://github.com/qoole/EUCToolbox/tree/main/Manage-Intune/Webpage%20Content)
+[Webpage Content](https://github.com/qoole/EUCToolbox/tree/main/Intune-Manage/Webpage%20Content)
 3) Navigate to the new URL and add /install to the URL
 4) Complete the steps to setup the environment
 

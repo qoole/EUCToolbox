@@ -156,10 +156,17 @@ function Get-RandomPassword {
     return [System.Web.Security.Membership]::GeneratePassword($length, $amountOfNonAlphanumeric)
 }
 
+
+
 ###############################################################################
 #Create AAD Application
 ###############################################################################
 $AppName = "SecurityReportsEUCToolbox"
+
+Get-MgApplication | Where-Object { $_.displayname -eq $AppName } | Foreach-Object { Remove-MgApplication -ApplicationId $_.Id }
+
+Start-Sleep -Seconds 2
+
 $App = New-MgApplication -DisplayName $AppName -SignInAudience AzureADMultipleOrgs
 $APPObjectID = $App.Id
 
@@ -296,6 +303,8 @@ $params = @{
     RedirectUris = @($RedirectURI)
 }
 Update-MgApplication -ApplicationId $APPObjectID -IsFallbackPublicClient -PublicClient $params
+
+Start-Sleep -Seconds 5
 
 ###############################################################################
 #Grant Admin Consent - Opens URL in Browser

@@ -160,6 +160,11 @@ function Get-RandomPassword {
 #Create AAD Application
 ###############################################################################
 $AppName = "IntuneBackupEUCToolbox"
+
+Get-MgApplication | Where-Object { $_.displayname -eq $AppName } | Foreach-Object { Remove-MgApplication -ApplicationId $_.Id }
+
+Start-Sleep -Seconds 2
+
 $App = New-MgApplication -DisplayName $AppName -SignInAudience AzureADMultipleOrgs
 $APPObjectID = $App.Id
 
@@ -317,6 +322,7 @@ $params = @{
 }
 Update-MgApplication -ApplicationId $APPObjectID -IsFallbackPublicClient -PublicClient $params
 
+Start-Sleep -Seconds 6
 ###############################################################################
 #Grant Admin Consent - Opens URL in Browser
 ###############################################################################
