@@ -52,8 +52,8 @@ if (Get-Module -ListAvailable -Name Microsoft.Graph.Authentication) {
     write-output "Microsoft Graph Authentication Already Installed"
 } 
 else {
-        Install-Module -Name Microsoft.Graph.Authentication -Scope CurrentUser -Repository PSGallery -Force
-        write-output "Microsoft Graph Authentication Installed"
+    Install-Module -Name Microsoft.Graph.Authentication -Scope CurrentUser -Repository PSGallery -Force
+    write-output "Microsoft Graph Authentication Installed"
 }
 
 #Install MS Graph if not available
@@ -61,8 +61,8 @@ if (Get-Module -ListAvailable -Name Microsoft.Graph.Applications) {
     write-output "Microsoft Graph Applications Already Installed"
 } 
 else {
-        Install-Module -Name Microsoft.Graph.Applications -Scope CurrentUser -Repository PSGallery -Force
-        write-output "Microsoft Graph Applications Installed"
+    Install-Module -Name Microsoft.Graph.Applications -Scope CurrentUser -Repository PSGallery -Force
+    write-output "Microsoft Graph Applications Installed"
 }
 
 #Import Module
@@ -159,7 +159,7 @@ function Get-RandomPassword {
 ###############################################################################
 #Create AAD Application
 ###############################################################################
-$AppName =  "DailyChecksEUCToolbox"
+$AppName = "DailyChecksEUCToolbox"
 $App = New-MgApplication -DisplayName $AppName -SignInAudience AzureADMultipleOrgs
 $APPObjectID = $App.Id
 
@@ -181,10 +181,10 @@ $appsecret = $ClientSecret2.SecretText
 $params = @{
     RequiredResourceAccess = @(
         @{
-            ResourceAppId = "00000003-0000-0000-c000-000000000000"
+            ResourceAppId  = "00000003-0000-0000-c000-000000000000"
             ResourceAccess = @(
                 @{
-                    Id = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                    Id   = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
                     Type = "Scope"
                 },
                 @{
@@ -309,7 +309,7 @@ Update-MgApplication -ApplicationId $APPObjectID -IsFallbackPublicClient -Public
 #Grant Admin Consent - Opens URL in Browser
 ###############################################################################
 #https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
-$App = Get-MgApplication | Where-Object {$_.DisplayName -eq $AppName}
+$App = Get-MgApplication | Where-Object { $_.DisplayName -eq $AppName }
 $TenantID = $App.PublisherDomain
 $AppID = $App.AppID
 $URL = "https://login.microsoftonline.com/$TenantID/adminconsent?client_id=$AppID"
@@ -318,4 +318,3 @@ Start-Process $URL
 write-host "Your App ID is $AppID"
 
 write-host "Your App Secret is $appsecret"
-
