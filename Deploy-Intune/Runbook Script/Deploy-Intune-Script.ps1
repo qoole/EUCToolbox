@@ -6729,12 +6729,12 @@ else {
 }
 
 ##Download Backup Script
-$backupurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/backup.bat"
+$backupurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/backup.bat"
 $backupscript = $DirectoryToCreate+"\backup.bat"
 Invoke-WebRequest -Uri $backupurl -OutFile $backupscript -UseBasicParsing
 
 ##Download Restore Script
-$restoreurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/NEWrestore.bat"
+$restoreurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/NEWrestore.bat"
 $restorescript = $DirectoryToCreate+"\restore.bat"
 Invoke-WebRequest -Uri $restoreurl -OutFile $restorescript -UseBasicParsing
 
@@ -8946,20 +8946,20 @@ else {
 }
 
 ##Download Backup Script
-$backupurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/backup.bat"
+$backupurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/backup.bat"
 $backupscript = $DirectoryToCreate + "\backup.bat"
 if (-not (Test-Path -LiteralPath $backupscript)) {
 Invoke-WebRequest -Uri $backupurl -OutFile $backupscript -UseBasicParsing
 }
 ##Download Restore Script
-$restoreurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/NEWrestore.bat"
+$restoreurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/NEWrestore.bat"
 $restorescript = $DirectoryToCreate + "\restore.bat"
 if (-not (Test-Path -LiteralPath $restorescript)) {
 Invoke-WebRequest -Uri $restoreurl -OutFile $restorescript -UseBasicParsing
 }
 
 ##Download Silent Launch Script
-$launchurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/run-invisible-userprof.vbs"
+$launchurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/run-invisible-userprof.vbs"
 $launchscript = $DirectoryToCreate + "\run-invisible.vbs"
 if (-not (Test-Path -LiteralPath $launchscript)) {
 Invoke-WebRequest -Uri $launchurl -OutFile $launchscript -UseBasicParsing
@@ -9195,7 +9195,7 @@ New-Item -ItemType Directory -Path $newpath
 
 New-Item -ItemType Directory -Path $newpath"\Project"
 # Find the app
-$appurl = "https://github.com/andrew-s-taylor/public/raw/main/Install-Scripts/Project/Deploy-Application.intunewin"
+$appurl = "https://github.com/qoole/public/raw/main/Install-Scripts/Project/Deploy-Application.intunewin"
 
 #Set the download location
 $output = "c:\temp\" + $path2 + "\Applications\Project\Deploy-Application.intunewin"
@@ -9276,7 +9276,7 @@ Invoke-MgGraphRequest -Uri $uri -Method Post -Body $JSON -ContentType "applicati
 ####################################################
 New-Item -ItemType Directory -Path $newpath"\Visio"
 # Find the app
-$appurl = "https://github.com/andrew-s-taylor/public/raw/main/Install-Scripts/Visio/Deploy-Application.intunewin"
+$appurl = "https://github.com/qoole/public/raw/main/Install-Scripts/Visio/Deploy-Application.intunewin"
 
 #Set the download location
 $output = "c:\temp\" + $path2 + "\Applications\Visio\Deploy-Application.intunewin"
@@ -9356,7 +9356,7 @@ Invoke-MgGraphRequest -Uri $uri1 -Method Post -Body $JSON1 -ContentType "applica
 
 New-Item -ItemType Directory -Path $newpath"\Office"
 # Find the app
-$appurl = "https://github.com/andrew-s-taylor/public/raw/main/Install-Scripts/O365/Output/setup.intunewin"
+$appurl = "https://github.com/qoole/public/raw/main/Install-Scripts/O365/Output/setup.intunewin"
 
 #Set the download location
 $output = "c:\temp\" + $path2 + "\Applications\Office\office.intunewin"

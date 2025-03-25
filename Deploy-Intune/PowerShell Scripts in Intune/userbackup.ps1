@@ -15,12 +15,12 @@ else {
 }
 
 ##Download Backup Script
-$backupurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/backup.bat"
+$backupurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/backup.bat"
 $backupscript = $DirectoryToCreate+"\backup.bat"
 Invoke-WebRequest -Uri $backupurl -OutFile $backupscript -UseBasicParsing
 
 ##Download Restore Script
-$restoreurl="https://raw.githubusercontent.com/andrew-s-taylor/public/main/Batch%20Scripts/NEWrestore.bat"
+$restoreurl="https://raw.githubusercontent.com/qoole/public/main/Batch%20Scripts/NEWrestore.bat"
 $restorescript = $DirectoryToCreate+"\restore.bat"
 Invoke-WebRequest -Uri $restoreurl -OutFile $restorescript -UseBasicParsing
 

@@ -291,8 +291,12 @@
       },
       "defaultValue": "https://github.com/qoole/EUCToolbox"
     },
-    "workflows_crontest_name": {
+    "workflows_cron_name": {
       "defaultValue": "BackupCron",
+      "type": "String"
+    },
+    "workflows_cronapi_name": {
+      "defaultValue": "BackupCronApi",
       "type": "String"
     }
 
@@ -807,7 +811,7 @@
     {
       "type": "Microsoft.Logic/workflows",
       "apiVersion": "2017-07-01",
-      "name": "[parameters('workflows_crontest_name')]",
+      "name": "[parameters('workflows_cron_name')]",
       "location": "[parameters('automationRegion')]",
       "properties": {
         "state": "Enabled",
@@ -876,7 +880,7 @@
     {
       "type": "Microsoft.Logic/workflows",
       "apiVersion": "2017-07-01",
-      "name": "[parameters('workflows_crontest_name')]",
+      "name": "[parameters('workflows_cronapi_name')]",
       "location": "[parameters('automationRegion')]",
       "properties": {
         "state": "Enabled",
