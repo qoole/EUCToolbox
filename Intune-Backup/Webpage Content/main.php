@@ -23,6 +23,13 @@
 // The main file contains the database connection, session initializing, and functions, other PHP files will depend on this file.
 // Include the configuration file
 include_once 'config.php';
+
+if (db_host =='') {
+	header('Location: /install');
+    die();
+} else {
+	
+
 // We need to use sessions, so you should always start sessions using the below function
 session_start();
 // Connect to the MySQL database using MySQLi
@@ -131,4 +138,5 @@ $webhookuri = webhook;
 $webhooksecret = webhooksecret;
 $appwebhookuri = appwebhook;
 $driftwebookuri = driftwebhook;
+}
 ?>
